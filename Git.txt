@@ -1,0 +1,25 @@
+﻿Git
+
+1、安装
+	git config --global user.name "Your Name"	#绑定用户名
+	git config --global user.email "email@example.com"	#绑定邮箱
+
+2、创建
+	git init	#初始化Git仓库
+	git add <file>	#添加文件到Git仓库，把文件修改添加到暂存区
+	git commit -m "remarks"	#提交变更后内容到Git仓库，-m参数后面输入说明
+
+3、版本 本地仓库
+	git status	#查看仓库当前的状态，有哪些文件修改、待提交
+	git diff	#查看具体修改内容，difference
+	git log		#查看提交日志 --pretty=online参数输出一行
+	git reset --hard HEAD^	#版本回退到上一个版本，上上一个版本HEAD^^，往上100个版本HEAD~100
+	git reset --hard commit_id	#根据版本ID恢复指定版本
+	git reflog	#查看历史命令，以便确定要回到未来的哪个版本
+	git diff HEAD -- <file>	#查看工作区和版本库里面最新版本的区别
+	git checkout -- <file>	#丢弃工作区的修改，或误删文件恢复到最新版本，一键还原(版本库替换工作区的版本)
+	git reset HEAD <file>	#把暂存区的修改撤销掉，重新放回工作区
+	git rm <file>	#从版本库中删除文件，后执行 git commit -m "remarks"
+
+4、版本 远程仓库GitHub
+	ssh-keygen -t -tsa -C "youremail@example.com"	#创建SSH Key
